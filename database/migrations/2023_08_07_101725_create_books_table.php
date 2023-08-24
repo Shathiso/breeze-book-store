@@ -17,9 +17,10 @@ return new class extends Migration
             $table->longText('description');
             $table->unsignedBigInteger('author_id')->index();
             $table->unsignedBigInteger('genre_id')->index();
-            $table->timestamps();
             $table->decimal('price');
             $table->integer('stock_quantity');
+            $table->timestamps();
+      
 
             $table->foreign('author_id')
                 ->references('id')
