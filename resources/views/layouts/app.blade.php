@@ -10,9 +10,16 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+       <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite('resources/css/app.css')
+        @vite('resources/js/app.js')
+
+        <!-- Livewire styles -->
+        @livewireStyles
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -29,8 +36,23 @@
 
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+                <div class="py-12">
+                    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                        <div class=" bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="min-height: 400px">
+                            <div class="p-6 text-gray-900 dark:text-gray-100">
+                                @include('components.notification')
+                                @if (isset($main))
+                                   {{ $main }}
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
+        
+        <!-- Livewire scripts -->
+        @livewireScripts
+        @livewire('livewire-ui-modal')
     </body>
 </html>

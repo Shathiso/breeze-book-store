@@ -5,13 +5,15 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <x-slot name="main">
+        <div class="flex justify-between" style="margin-bottom: 30px">
+            <span>You're logged in!</span>
+
+            <a href="books/create" class="rounded-md bg-gray-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                Store a book
+             </a>
+        </div>  
+        <livewire:user-books />                        
+    </x-slot>
 </x-app-layout>
