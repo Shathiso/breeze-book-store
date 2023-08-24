@@ -15,17 +15,17 @@ class Book extends Model
    
     protected $guarded = ['id'];
 
-    public function authors(): BelongsTo
+    public function author(): BelongsTo
     {
        return $this->belongsTo(Author::class);
     }
 
-    public function genres(): HasOne
+    public function genre(): HasOne
     {
        return $this->hasOne(Genre::class);
     }
 
-    public function orders(): BelongsToMany
+    public function order(): BelongsToMany
     {
        return $this->belongsToMany(Genre::class);
     }

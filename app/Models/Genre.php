@@ -12,7 +12,7 @@ class Genre extends Model
 
     protected $guarded = ['id'];
 
-    public function books(): BelongsToMany
+    public function book(): BelongsToMany
     {
         return $this->belongsToMany(Book::class);
     }

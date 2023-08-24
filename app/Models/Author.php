@@ -20,9 +20,9 @@ class Author extends Model
 
     protected $guarded = ['id'];
 
-    public function users(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     /*
