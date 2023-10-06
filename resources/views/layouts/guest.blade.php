@@ -10,6 +10,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
 
         <!-- Livewire styles -->
          @livewireStyles
@@ -18,7 +19,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div class="min-h-screen bg-gray-100 dark:bg-gray-900" >
             @include('layouts.guest-navigation')
 
             <!-- Page Content -->
@@ -26,8 +27,9 @@
                 <div class="py-12">
                     <div class="max-w-7xl lg:min-w-7xl mx-auto sm:px-6 lg:px-8">
                         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                            <div class="p-6 text-gray-900 dark:text-gray-100">
+                            <div class="p-6 text-gray-900 dark:text-gray-100" >
                                 @include('components.notification')
+                                @include('notify::components.notify')
                                 @if (isset($main))
                                     {{ $main }}
                                 @endif
@@ -35,10 +37,12 @@
                         </div>
                     </div>
                 </div>
+                @include('components.shopping-cart')
             </main>
         </div>
         
         <!-- Livewire scripts -->
         @livewireScripts
+        @stack('scripts')
     </body>
 </html>

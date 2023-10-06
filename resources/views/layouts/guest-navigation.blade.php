@@ -11,7 +11,13 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="relative sm:right-0 p-6 text-right" >
+                <div class="flex sm:right-0 p-6 text-right" >
+
+                    <x-text-input id="title" class="inline-block relative mr-2 min-h-[26px]" style="top: -4px" placeholder="Search" type="text" name="title" :value="old('title')" autofocus autocomplete="title" />
+
+                    <!-- Cart Button -->
+                    <livewire:cart-nav-btn /> 
+    
                     <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
                         {{ __('Login') }}
                     </x-nav-link>

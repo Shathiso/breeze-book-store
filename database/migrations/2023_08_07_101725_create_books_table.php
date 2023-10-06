@@ -17,6 +17,7 @@ return new class extends Migration
             $table->longText('description');
             $table->unsignedBigInteger('author_id')->index();
             $table->unsignedBigInteger('genre_id')->index();
+            $table->string('image_url')->nullable();
             $table->decimal('price');
             $table->integer('stock_quantity');
             $table->timestamps();

@@ -20,7 +20,9 @@ class BookStoreRequest extends FormRequest
             'price' => 'required',
             'stock_quantity' => 'required',
             'author_id' => 'required',
-            'genre_id' => 'required'
+            'genre_id' => 'required',
+            'image'  => 'required'
         ];
+        //|mimes:jpg,png,gif,jpeg|max:2048
     }
 }

@@ -6,6 +6,14 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
+            <!-- 
+                Hidden field which allows you to redirect to the delivery details page, when the local storage
+                has the property checkingOut : true
+            -->
+            <div hidden x-data>
+                <input x-data id="checkingOut" class="block mt-1 w-full" type="text" name="checkingOut" :value="$store.Cart.checkingOut" />
+            </div>
+
             <!-- Email Address -->
             <div>
                 <x-input-label for="email" :value="__('Email')" />

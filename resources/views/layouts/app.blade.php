@@ -13,6 +13,7 @@
        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
 
         <!-- Scripts -->
         @vite('resources/css/app.css')
@@ -20,6 +21,7 @@
 
         <!-- Livewire styles -->
         @livewireStyles
+       
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -41,6 +43,7 @@
                         <div class=" bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="min-height: 400px">
                             <div class="p-6 text-gray-900 dark:text-gray-100">
                                 @include('components.notification')
+                                @include('notify::components.notify')
                                 @if (isset($main))
                                    {{ $main }}
                                 @endif

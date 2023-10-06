@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 
@@ -19,8 +20,11 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', [BookController::class, 'index'])->name('book.index');
 Route::get('/books/{book}/view', [BookController::class, 'show'])->name('book.show');
 
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');;
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/cart/shipping', [CartController::class, 'shipping'])->name('shipping');
 });
 
 Route::middleware('auth')->group(function () {
@@ -30,7 +34,9 @@ Route::middleware('auth')->group(function () {
     
     require __DIR__.'/book.php';
 
+
 });
+
 
 require __DIR__.'/auth.php';
 
